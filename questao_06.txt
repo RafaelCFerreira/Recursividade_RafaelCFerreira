@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+
+int rec();
+
+int main()
+{
+    printf("Resultado = %d", rec(20));
+    return 0;
+}
+
+int rec(int x){
+    if(x==5){
+        return 1;
+    }else{
+        return rec(x-5)+4; // 3x4+1 =13
+    }
+}
