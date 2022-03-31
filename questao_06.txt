@@ -1,6 +1,4 @@
 #include <stdio.h>
-
-
 int rec();
 
 int main()
@@ -16,3 +14,9 @@ int rec(int x){
         return rec(x-5)+4; // 3x4+1 =13
     }
 }
+
+rec(20)   = 4
+rec(20-5=15) = 4+4
+rec(15-5=10) = 4+4+4
+rec(10-5=5) = 4+4+4+1 =13
+
