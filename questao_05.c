@@ -1,26 +1,41 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int mdc();
-int main()
+int expoente_a (int n1, char a);
+int expoente_b (int n2, char b);
+
+int main ()
 {
-    int a, b, n, x;
-    printf("Entre com o valore de a:\n");
-    scanf("%d", &a);
-    printf("Entre com o valore de b:\n");
-    scanf("%d", &b);
-    printf("Entre com o valor do expoente:\n");
-    scanf("%d", &n);
-    x = mdc(a, b, n);
-    printf("Resultado %d", x);
-    return 0;
+  int numero, contador_a, contador_b;
+  char a = 'a', b = 'b';
+
+  printf ("Digite o expoente de (a) e (b):");
+  scanf ("%d", &numero);
+  for (contador_a = 0; contador_a < numero; contador_a++)
+    {
+      printf ("%c", expoente_a (numero, a));
+    }
+  for (contador_b = 0; contador_b < numero; contador_b++)
+    {
+      printf ("%c", expoente_b (numero, b));
+    }
+
+  return 0;
 }
 
-int mdc(int a, int b, int n){
-    int x;
-    if(n==0){
-        x= 1;
-    }else{
-        x= a*b*mdc(a, b, n-1);
+int expoente_a (int n1, char a)
+{
+  if (n1 > 0)
+    {
+      return expoente_a (n1 - 1, a);
     }
-    return x;
 }
+
+int expoente_b (int n2, char b)
+{
+  if (n2 > 0)
+    {
+      return expoente_b (n2 - 1, b);
+    }
+}
+
+
